@@ -1,0 +1,40 @@
+{
+  "name": "statful-traffic-splitter",
+  "description": "Listens to traffic-splitter events and sends metrics to statful",
+  "author": "Mindera",
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Mindera/statful-traffic-splitter.git"
+  },
+  "homepage": "https://github.com/Mindera/statful-traffic-splitter#readme",
+  "version": "0.0.1",
+  "main": "index.js",
+  "scripts": {
+    "pretest": "standard --verbose",
+    "test": "mocha --recursive",
+    "test-coverage": "nyc npm t",
+    "code-format": "standard --fix"
+  },
+  "devDependencies": {
+    "chai": "^4.1.2",
+    "mocha": "^5.2.0",
+    "nyc": "^12.0.2",
+    "standard": "^11.0.1"
+  },
+  "peerDependencies": {
+    "statful-client": "^4.3.4",
+    "traffic-splitter": "^1.2.5"
+  },
+  "bugs": {
+    "url": "https://github.com/Mindera/statful-traffic-splitter/issues"
+  },
+  "directories": {
+    "lib": "lib",
+    "test": "test"
+  },
+  "keywords": [
+    "statful",
+    "traffic-splitter"
+  ]
+}
