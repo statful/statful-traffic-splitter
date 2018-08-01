@@ -11,20 +11,16 @@
   "version": "0.0.1",
   "main": "index.js",
   "scripts": {
-    "pretest": "standard --verbose",
+    "pretest": "standard --env mocha --verbose",
     "test": "mocha --recursive",
     "test-coverage": "nyc npm t",
-    "code-format": "standard --fix"
+    "code-format": "standard --env mocha --fix"
   },
   "devDependencies": {
     "chai": "^4.1.2",
     "mocha": "^5.2.0",
     "nyc": "^12.0.2",
     "standard": "^11.0.1"
-  },
-  "peerDependencies": {
-    "statful-client": "^4.3.4",
-    "traffic-splitter": "^1.2.5"
   },
   "bugs": {
     "url": "https://github.com/Mindera/statful-traffic-splitter/issues"
