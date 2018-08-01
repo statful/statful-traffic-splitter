@@ -1,6 +1,6 @@
 # statful-traffic-splitter [![NPM version][npm-image]][npm-url] [![build status][travis-image]][travis-url]
 
-this component listens to [traffic-splitter](https://www.npmjs.com/package/traffic-splitter) events and sends metrics to [statful](https://www.npmjs.com/package/statful-client).
+this component listens to [traffic-splitter](https://www.npmjs.com/package/traffic-splitter) events and sends metrics to [statful](https://statful.com) with [statful-client](https://www.npmjs.com/package/statful-client).
 
 ## How to
 
