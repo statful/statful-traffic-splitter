@@ -22,13 +22,6 @@
     "nyc": "^12.0.2",
     "standard": "^11.0.1"
   },
-  "bugs": {
-    "url": "https://github.com/Mindera/statful-traffic-splitter/issues"
-  },
-  "directories": {
-    "lib": "lib",
-    "test": "test"
-  },
   "keywords": [
     "statful",
     "traffic-splitter"
