@@ -8,7 +8,7 @@
     "url": "git+https://github.com/Mindera/statful-traffic-splitter.git"
   },
   "homepage": "https://github.com/Mindera/statful-traffic-splitter#readme",
-  "version": "0.0.1",
+  "version": "1.0.0",
   "main": "index.js",
   "scripts": {
     "pretest": "standard --env mocha --verbose",
