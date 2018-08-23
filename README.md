@@ -17,5 +17,5 @@ StatfulTrafficSplitter(statful, splitter)
 
 [npm-image]: https://img.shields.io/npm/v/statful-traffic-splitter.svg?style=flat-square
 [npm-url]: https://www.npmjs.com/package/statful-traffic-splitter
-[travis-image]: https://travis-ci.org/Mindera/statful-traffic-splitter.svg?branch=master
-[travis-url]: https://travis-ci.org/Mindera/statful-traffic-splitter
+[travis-image]: https://travis-ci.org/statful/statful-traffic-splitter.svg?branch=master
+[travis-url]: https://travis-ci.org/statful/statful-traffic-splitter

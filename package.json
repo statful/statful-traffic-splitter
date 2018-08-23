@@ -1,13 +1,13 @@
 {
   "name": "statful-traffic-splitter",
   "description": "Listens to traffic-splitter events and sends metrics to statful",
-  "author": "Mindera",
+  "author": "Statful",
   "license": "MIT",
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/Mindera/statful-traffic-splitter.git"
+    "url": "git+https://github.com/statful/statful-traffic-splitter.git"
   },
-  "homepage": "https://github.com/Mindera/statful-traffic-splitter#readme",
+  "homepage": "https://github.com/statful/statful-traffic-splitter#readme",
   "version": "1.0.2",
   "main": "index.js",
   "scripts": {
