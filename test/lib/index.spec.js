@@ -52,6 +52,12 @@ describe('StatfulTrafficSplitter', function () {
     StatfulTrafficSplitter(statful, splitter)
   })
 
+  afterEach(function () {
+    spies.counter.resetHistory()
+    spies.timer.resetHistory()
+    spies.gauge.resetHistory()
+  })
+
   it('should be a function', function () {
     expect(StatfulTrafficSplitter).to.be.a('function')
   })
@@ -68,13 +74,15 @@ describe('StatfulTrafficSplitter', function () {
     splitter.events.emit('serverStart')
     splitter.events.emit('noUpstreamFound', req)
     splitter.events.emit('upstreamException', error, upstream)
+    splitter.events.emit('serving', statusCode, upstream, duration, host, upstreamReq, upstreamRes)
 
-    expect(spies.counter.callCount).to.equal(4)
+    expect(spies.counter.callCount).to.equal(5)
 
     expect(spies.counter.calledWithExactly('application_start', 1)).to.be.true
     expect(spies.counter.calledWithExactly('server_start', 1)).to.be.true
     expect(spies.counter.calledWithExactly('no_upstream_found', 1)).to.be.true
     expect(spies.counter.calledWithExactly('upstream_exception', 1, { tags: { name, type } })).to.be.true
+    expect(spies.counter.calledWithExactly('content_length', contentLength, { tags: { name, type, host } })).to.be.true
   })
 
   it('should send timer metrics when certain events are emitted', function () {
@@ -95,7 +103,7 @@ describe('StatfulTrafficSplitter', function () {
     const upstreamTags = { name, type, host }
     const getFinalOptions = (customTags) => ({ tags: Object.assign({}, upstreamTags, customTags) })
 
-    expect(spies.timer.calledWithExactly('upstream', duration, getFinalOptions({ statusCode, contentLength, status: SUCCESS }))).to.be.true
+    expect(spies.timer.calledWithExactly('upstream', duration, getFinalOptions({ statusCode, status: SUCCESS }))).to.be.true
     expect(spies.timer.calledWithExactly('upstream', duration, getFinalOptions({ status: ERROR }))).to.be.true // servingError and servingFileError
     expect(spies.timer.calledWithExactly('upstream', duration, getFinalOptions({ status: SUCCESS }))).to.be.true
     expect(spies.timer.calledWithExactly('upstream', duration, getFinalOptions({ statusCode, status: SUCCESS }))).to.be.true
